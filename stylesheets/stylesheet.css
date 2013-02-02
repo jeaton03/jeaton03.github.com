@@ -8,7 +8,7 @@ html, body
 h1
 {
 	text-align: center;
-	font-size: 20 px;
+	font-size: 40 px;
 	font-family: helvetica;
 	color: black;
 	text-shadow: 2px 2px 3px #F6FF00;
@@ -19,6 +19,15 @@ body
 	background-image: url(chicken.jpg);
 }
 
+.photo
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 100px;
+	max-width: 50%
+}
+
 .middlebox
 {
 	background-color: #00FFFB;
@@ -27,7 +36,6 @@ body
 	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 40px;
 	border-style: solid;
 	border-width: 2px;
 }
