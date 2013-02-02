@@ -7,6 +7,7 @@ html, body
 
 h1
 {
+	text-align: center;
 	font-size: 20 px;
 	font-family: helvetica;
 	color: black;
@@ -15,20 +16,27 @@ h1
 
 body
 {
-	left: 40%;
+	background-image: url(chicken.jpg);
+}
+
+.middlebox
+{
 	background-color: #00FFFB;
-	position: relative;
+	min-width: 500px;
+	width: 45%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 40px;
+	border-style: solid;
+	border-width: 2px;
 }
 
-.middle_button
+.yellowbutton
 {
-	border: none;
-	width:350px;
-	height:150px;
-	background-image: url('button_resume.png');
-}
-
-.middle_button:hover
-{
-	background-image: url('button_resume_highlight.png');
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: auto;
 }
