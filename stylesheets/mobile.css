@@ -45,9 +45,9 @@ body
 .yellowbutton
 {
 	display: block;
-	margin-left: 32%;
+	margin-left: auto;
 	margin-right: auto;
-	height: 41%;
+	height: auto;
 	width: auto;
 }
 
@@ -63,21 +63,28 @@ body
 	display: block;
 	width: 50%;
 	position: relative;
-	left: 51%;
+	float: right;
 }
 
 h2
 {
 	text-align: center;
 	font-family: helvetica;
-	margin-right: 10%;
+	margin-right: 5%;
 	text-shadow: 1px 1px 5px #00FF00;
+	font-size: 25px;
+}
+
+h3
+{
+	font-size: 22px;
+	margin-left: 5%;
 }
 
 ul
 {
 	font-family: helvetica;
-	margin-left: 5%;
+	margin-left: 10%;
 }
 
 li
