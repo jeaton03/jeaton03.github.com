@@ -53,14 +53,14 @@ body
 .redbutton
 {
 	display: block;
-	width: 50%;
+	width: 75%;
 	position: relative;
 }
 
 .greenbutton
 {
 	display: block;
-	width: 50%;
+	width: 75%;
 	position: relative;
 	float: right;
 }
