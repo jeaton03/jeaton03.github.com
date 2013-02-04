@@ -34,7 +34,7 @@ body
 	background-color: #00FFFB;
 	min-width: 500px;
 	width: 90%;
-	height: 95%;
+	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 	border-style: solid;
@@ -48,6 +48,7 @@ body
 	margin-right: auto;
 	height: auto;
 	width: 80%;
+	vertical-align: -50%
 }
 
 .redbutton
@@ -71,12 +72,12 @@ h2
 	font-family: helvetica;
 	margin-right: 5%;
 	text-shadow: 1px 1px 5px #00FF00;
-	font-size: 25px;
+	font-size: 40px;
 }
 
 h3
 {
-	font-size: 40px;
+	font-size: 30px;
 	margin-left: 5%;
 }
 
