@@ -48,7 +48,8 @@ body
 	margin-right: auto;
 	height: auto;
 	width: 80%;
-	margin-top: 10%;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 .redbutton
@@ -63,7 +64,7 @@ body
 	display: block;
 	width: 75%;
 	position: relative;
-	left: 65%;
+	left: 60%;
 }
 
 h2
