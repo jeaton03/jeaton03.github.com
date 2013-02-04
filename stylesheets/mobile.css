@@ -48,7 +48,7 @@ body
 	margin-right: auto;
 	height: auto;
 	width: 80%;
-	vertical-align: -50%
+	vertical-align: -50%;
 }
 
 .redbutton
@@ -63,7 +63,7 @@ body
 	display: block;
 	width: 75%;
 	position: relative;
-	float: right;
+	left: 50%;
 }
 
 h2
@@ -85,11 +85,6 @@ ul
 {
 	font-family: helvetica;
 	margin-left: 10%;
-}
-
-li
-{
-	font-size: 20px;
 }
 
 .pokemon
