@@ -25,13 +25,30 @@
 	
 	<form id = "pokemon_form" action = "javascript:calculate()">
 		<table id = "top_3">
-			<tr><td class = "top_text">Your Attack / Special Attack: </td><td><input type = "number" name = "attack"></td></tr>
-			<tr><td class = "top_text">Opponent's Defense / Special Defense: </td><td><input type = "number" name = "defense"></td></tr>
-			<tr><td class = "top_text">Your Level: </td><td><input type = "number" name = "level"></td></tr>
-			<tr><td class = "top_text">Move's Power: </td><td><input type = "number" name = "power"></td></tr>
+			<tr><td class = "top_text">Your Attack / Special Attack: </td><td><input type = "number" name = "attack" value = "1"></td></tr>
+			<tr><td class = "top_text">Opponent's Defense / Special Defense: </td><td><input type = "number" name = "defense" value = "1"></td></tr>
+			<tr><td class = "top_text">Your Level: </td><td><input type = "number" name = "level" value = "1"></td></tr>
+			<tr><td class = "top_text">Move's Power: </td><td><input type = "number" name = "power" value = "1"></td></tr>
 		</table><br/>
 		<div id = "boxes">
-			<input type = "checkbox" name = "STAB" value = "STAB"> STAB (Same Type Attack Bonus) <br/>
+			<div class = catagory >Super Effective</div>
+				<input type = "radio" name = "rad" value = "4">4x (Super Effective)?<br/>
+				<input type = "radio" name = "rad" value = "2">2x (Super Effective)?<br/>
+				<input type = "radio" name = "rad" value = "1">Normal Damage?<br/>
+				<input type = "radio" name = "rad" value = "0.5">1/2x (Not Very Effective)?<br/>
+				<input type = "radio" name = "rad" value = "0.25">1/4x (Not Very Effective)?<br/>
+			<br/>
+			<div class = catagory >Move Type</div>
+				<input type = "radio" name = "type" value = "phys">Physical?<br/>
+				<input type = "radio" name = "type" value = "spec">Special?<br/>
+			<br/>
+				<input type = "checkbox" name = "check" value = "STAB"> STAB (Same Type Attack Bonus)? <br/>
+				<input type = "checkbox" name = "check" value = "ref"> Reflect Up? <br/>
+				<input type = "checkbox" name = "check" value = "lig"> Light Screen Up? <br/>
+				<input type = "checkbox" name = "check" value = "burn"> Opponent Burned? <br/>
+				<input type = "checkbox" name = "check" value = "team"> Move Hits Multiple Opponents? <br/>
+				<input type = "checkbox" name = "check" value = "sun"> Is Sunny Day / Rain Dance Helping? <br/>
+				<input type = "checkbox" name = "check" value = "life"> Holding Life Orb? <br/>
 		</div>
 		<br/>
 		<input id = "submit_button" type = "submit" value = "Submit">
@@ -51,10 +68,43 @@
 		var defense = JSON.parse(form.defense.value);
 		var level = JSON.parse(form.level.value);
 		var power = JSON.parse(form.power.value);
+		var sup = form.rad;
+		var type = form.type;
+		var check = form.check;
 		
-		var answer = attack + defense;
+		//if (check[0].checked)
+		var answer = (((level*2/5)+2)*power*attack/50)/defense;
 		
-		result.innerHTML = 'Damage Calculation: ' + answer + ' HP';
+		var super_effective = 1;
+		for (i = 0; i < 5; i++)		// Super Effective Stuff
+		{
+			if (sup[i].checked)
+			{
+				super_effective = sup[i].value;
+			}
+		}
+		// Mod1 Stuff
+		var mod1 = 1;
+		if (type[0].checked && check[3].checked)	// Burned
+		{
+			mod1 = mod1 * 0.5;
+		}
+		if (type[0].checked && check[1].checked)	// Reflect
+		{
+			mod1 = mod1 * 0.5;
+		}
+		if (type[1].checked && check[2].checked)	// Light Screen
+		{
+			mod1 = mod1 * 0.5;
+		}
+		
+		answer = ((answer * mod1) + 2) * super_effective;
+			
+			result.innerHTML = 'Damage Calculation: ' + answer + ' HP';
+		/*else
+		{
+			result.innerHTML = 'Enter Proper Values';
+		}*/
 	}
 </script>
 
