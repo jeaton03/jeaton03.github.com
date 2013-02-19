@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Pokemon</title>
+	<link rel = "stylesheet" href = "stylesheets/mobile.css" media = "only screen and (max-device-width:1000px)" />
+	<link rel = "stylesheet" href = "stylesheets/stylesheet.css" media = "print, screen and (min-device-width:1001px)" />
+	<link rel = "stylesheet" href = "stylesheets/pokemon.css" />
+</head>
+
+<body>
+<div class = "middlebox">
+
+	<a onClick = "history.go(-1); return true;">
+		<img alt = "Back Button" src = "stylesheets/button_back.png"
+			class = "redbutton"
+			id = "pokemon_back"
+			onMouseOver = "this.src = 'stylesheets/button_back_highlight.png'"
+			onMouseOut  = "this.src = 'stylesheets/button_back.png'" >
+	</a>
+	
+	<h1>Pokemon Damage Calculator</h1>
+	<br/>
+	
+	<form id = "pokemon_form">
+		Input Here: <input type = "text" name = "firstname">
+	</form>
+	
+</div>
+</body>
+
+</html>

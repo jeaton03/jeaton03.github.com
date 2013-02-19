@@ -91,3 +91,11 @@ li
 	font-family: helvetica;
 	font-size: 20px;
 }
+
+#pokemon_button
+{
+	display: block;
+	width: 85%;
+	position: relative;
+	margin-left: 10%;
+}
