@@ -22,3 +22,14 @@
 {
 	text-align: right;
 }
+
+#boxes
+{
+	margin-left: 20%;
+}
+
+#result
+{
+	text-align: center;
+	font-size: 30px;
+}

@@ -28,11 +28,18 @@
 			<tr><td class = "top_text">Your Attack / Special Attack: </td><td><input type = "number" name = "attack"></td></tr>
 			<tr><td class = "top_text">Opponent's Defense / Special Defense: </td><td><input type = "number" name = "defense"></td></tr>
 			<tr><td class = "top_text">Your Level: </td><td><input type = "number" name = "level"></td></tr>
+			<tr><td class = "top_text">Move's Power: </td><td><input type = "number" name = "power"></td></tr>
 		</table><br/>
-		<input type = "checkbox" name = "STAB" value = "STAB"> STAB (Same Type Attack Bonus) <br/>
+		<div id = "boxes">
+			<input type = "checkbox" name = "STAB" value = "STAB"> STAB (Same Type Attack Bonus) <br/>
+		</div>
+		<br/>
 		<input id = "submit_button" type = "submit" value = "Submit">
 		
 	</form>
+	
+	<p id = "result">
+	</p>
 	
 </div>
 
@@ -40,11 +47,14 @@
 	function calculate()
 	{
 		var form = document.getElementById('pokemon_form');
-		var attack = form.attack.value;
-		var defense = form.defense.value;
-		var level = form.level;
-		console.log(attack);
-		console.log(defense);
+		var attack = JSON.parse(form.attack.value);
+		var defense = JSON.parse(form.defense.value);
+		var level = JSON.parse(form.level.value);
+		var power = JSON.parse(form.power.value);
+		
+		var answer = attack + defense;
+		
+		result.innerHTML = 'Damage Calculation: ' + answer + ' HP';
 	}
 </script>
 
