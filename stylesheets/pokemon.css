@@ -10,3 +10,15 @@
 	font-family: helvetica;
 	font-size: 16px;
 }
+
+#submit_button
+{
+	font-family: helvetica;
+	position: relative;
+	margin-left: 45%;
+}
+
+.top_text
+{
+	text-align: right;
+}

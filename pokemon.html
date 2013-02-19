@@ -23,12 +23,31 @@
 	<h1>Pokemon Damage Calculator</h1>
 	<br/>
 	
-	<form id = "pokemon_form">
-		Your Attack / Special Attack: <input type = "number" name = "attack"> <br/>
-		Opponent's Defense / Special Defense: <input type = "number" name = "defense">
+	<form id = "pokemon_form" action = "javascript:calculate()">
+		<table id = "top_3">
+			<tr><td class = "top_text">Your Attack / Special Attack: </td><td><input type = "number" name = "attack"></td></tr>
+			<tr><td class = "top_text">Opponent's Defense / Special Defense: </td><td><input type = "number" name = "defense"></td></tr>
+			<tr><td class = "top_text">Your Level: </td><td><input type = "number" name = "level"></td></tr>
+		</table><br/>
+		<input type = "checkbox" name = "STAB" value = "STAB"> STAB (Same Type Attack Bonus) <br/>
+		<input id = "submit_button" type = "submit" value = "Submit">
+		
 	</form>
 	
 </div>
+
+<script>
+	function calculate()
+	{
+		var form = document.getElementById('pokemon_form');
+		var attack = form.attack.value;
+		var defense = form.defense.value;
+		var level = form.level;
+		console.log(attack);
+		console.log(defense);
+	}
+</script>
+
 </body>
 
 </html>
