@@ -31,24 +31,30 @@
 			<tr><td class = "top_text">Move's Power: </td><td><input type = "number" name = "power" value = "1"></td></tr>
 		</table><br/>
 		<div id = "boxes">
-			<div class = catagory >Super Effective</div>
+			<div class = "catagory">Super Effective</div>
 				<input type = "radio" name = "rad" value = "4">4x (Super Effective)?<br/>
 				<input type = "radio" name = "rad" value = "2">2x (Super Effective)?<br/>
 				<input type = "radio" name = "rad" value = "1">Normal Damage?<br/>
 				<input type = "radio" name = "rad" value = "0.5">1/2x (Not Very Effective)?<br/>
 				<input type = "radio" name = "rad" value = "0.25">1/4x (Not Very Effective)?<br/>
 			<br/>
-			<div class = catagory >Move Type</div>
+			<div class = "catagory">Move Type</div>
 				<input type = "radio" name = "type" value = "phys">Physical?<br/>
 				<input type = "radio" name = "type" value = "spec">Special?<br/>
 			<br/>
+			<div class = "catagory">Other</div>
 				<input type = "checkbox" name = "check" value = "STAB"> STAB (Same Type Attack Bonus)? <br/>
 				<input type = "checkbox" name = "check" value = "ref"> Reflect Up? <br/>
 				<input type = "checkbox" name = "check" value = "lig"> Light Screen Up? <br/>
 				<input type = "checkbox" name = "check" value = "burn"> Opponent Burned? <br/>
 				<input type = "checkbox" name = "check" value = "team"> Move Hits Multiple Opponents? <br/>
-				<input type = "checkbox" name = "check" value = "sun"> Is Sunny Day / Rain Dance Helping? <br/>
 				<input type = "checkbox" name = "check" value = "life"> Holding Life Orb? <br/>
+				<input type = "checkbox" name = "check" value = "two"> Is this a 2 VS 2 Battle? <br/>
+			<br/>
+			<div class = "catagory">Sunny Day / Rain Dance</div>
+				<input type = "radio" name = "sun_rain" value = "yes"> Is Sunny Day / Rain Dance Helping? <br/>
+				<input type = "radio" name = "sun_rain" value = "no"> Is Sunny Day / Rain Dance Hurting? <br/>
+				<input type = "radio" name = "sun_rain" value = "neither"> Neither? <br/>
 		</div>
 		<br/>
 		<input id = "submit_button" type = "submit" value = "Submit">
@@ -71,8 +77,8 @@
 		var sup = form.rad;
 		var type = form.type;
 		var check = form.check;
+		var sun = form.sun_rain;
 		
-		//if (check[0].checked)
 		var answer = (((level*2/5)+2)*power*attack/50)/defense;
 		
 		var super_effective = 1;
@@ -83,19 +89,52 @@
 				super_effective = sup[i].value;
 			}
 		}
+		
 		// Mod1 Stuff
 		var mod1 = 1;
-		if (type[0].checked && check[3].checked)	// Burned
+		if (type[0].checked) // Physical
 		{
-			mod1 = mod1 * 0.5;
+			if (check[3].checked)	// Burned
+			{
+				mod1 = mod1 * 0.5;
+			}
+			if (check[1].checked)
+			{
+				if (check[6].checked)	// 2 VS 2 Battle
+				{
+					mod1 = mod1 * 2 / 3;
+				}
+				else
+				{
+					mod1 = mod1 * 0.5;
+				}
+			}
 		}
-		if (type[0].checked && check[1].checked)	// Reflect
+		else if (type[1].checked) // Special
 		{
-			mod1 = mod1 * 0.5;
+			if (check[2].checked) // Light Screen
+			{
+				if (check[6].checked) // 2 VS 2 Battle
+				{
+					mod1 = mod1 * 2 / 3;
+				}
+				else
+				{
+					mod1 = mod1 * 0.5;
+				}
+			}
 		}
-		if (type[1].checked && check[2].checked)	// Light Screen
+		if (check[4].checked) // Move hit multiple pokemon
 		{
-			mod1 = mod1 * 0.5;
+			mod1 = mod1 * 0.75;
+		}
+		if (sun[0].checked) // Sunny Day or Rain Dance is helping
+		{
+			mod1 = mod1 * 2;
+		}
+		else if (sun[1].checked) // Sunny Day or Rain Dance is hurting
+		{
+			mod1 = mod1 * 2;
 		}
 		
 		answer = ((answer * mod1) + 2) * super_effective;
