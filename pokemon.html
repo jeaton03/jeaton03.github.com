@@ -55,6 +55,10 @@
 				<input type = "radio" name = "sun_rain" value = "yes"> Is Sunny Day / Rain Dance Helping? <br/>
 				<input type = "radio" name = "sun_rain" value = "no"> Is Sunny Day / Rain Dance Hurting? <br/>
 				<input type = "radio" name = "sun_rain" value = "neither"> Neither? <br/>
+			<br/>
+			<table id = "top_3">
+			<tr><td class = "top_text">Any Other Multiplier: </td><td><input type = "number" name = "other" value = "1"></td></tr>
+			</table>
 		</div>
 		<br/>
 		<input id = "submit_button" type = "submit" value = "Submit">
@@ -70,6 +74,17 @@
 	function calculate()
 	{
 		var form = document.getElementById('pokemon_form');
+		
+		if (isEmpty(form.attack.value) ||
+			isEmpty(form.defense.value) ||
+			isEmpty(form.level.value) ||
+			isEmpty(form.power.value) ||
+			isEmpty(form.other.value) )
+		{
+			result.innerHTML = 'Please Enter All Numbers';
+			return;
+		}
+		
 		var attack = JSON.parse(form.attack.value);
 		var defense = JSON.parse(form.defense.value);
 		var level = JSON.parse(form.level.value);
@@ -78,6 +93,7 @@
 		var type = form.type;
 		var check = form.check;
 		var sun = form.sun_rain;
+		var other = JSON.parse(form.other.value);
 		
 		var answer = (((level*2/5)+2)*power*attack/50)/defense;
 		
@@ -137,13 +153,22 @@
 			mod1 = mod1 * 2;
 		}
 		
-		answer = ((answer * mod1) + 2) * super_effective;
-			
-			result.innerHTML = 'Damage Calculation: ' + answer + ' HP';
-		/*else
+		var mod2 = 1;
+		if (check[0].checked) // STAB
 		{
-			result.innerHTML = 'Enter Proper Values';
-		}*/
+			mod2 = mod2 * 1.5;
+		}
+		
+		mod2 = mod2 * other;
+		
+		answer = ((answer * mod1) + 2) * super_effective * mod2;
+			
+		result.innerHTML = 'Damage Calculation: ' + answer + ' HP';
+	}
+
+	function isEmpty(str)
+	{
+		return (!str || 0 === str.length);
 	}
 </script>
 
