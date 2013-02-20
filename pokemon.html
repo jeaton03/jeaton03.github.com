@@ -162,8 +162,9 @@
 		mod2 = mod2 * other;
 		
 		answer = ((answer * mod1) + 2) * super_effective * mod2;
-			
-		result.innerHTML = 'Damage Calculation: ' + answer + ' HP';
+		
+		result.innerHTML = 'Max Damage: ' + Math.floor(answer) + ' HP' + '<br/>' +
+						   'Min Damage: ' + Math.floor(answer*0.85) + ' HP';
 	}
 
 	function isEmpty(str)
