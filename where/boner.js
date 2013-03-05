@@ -29,7 +29,6 @@ function begin()
 	place_red();
 	getMyLocation();
 	parse_WalCarm();
-	other_info();
 }
 
 function place_red()
@@ -233,6 +232,7 @@ function parse_WalCarm()
 			WalCarm = JSON.parse(WalCarm);
 
 			pin_WalCarm();
+			other_info();
 		}
 	}
 }
