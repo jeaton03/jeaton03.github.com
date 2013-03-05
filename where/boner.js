@@ -315,8 +315,8 @@ function distance(lat1,lon1,lat2,lon2)
 
 function other_info()
 {
-	var side_col = document.getElementById('text');
-	side_col.content = 'Hi';
+	var side_col = document.getElementById('text').innerHTML;
+	side_col = 'Hi';
 }
 
 function t_stops()
