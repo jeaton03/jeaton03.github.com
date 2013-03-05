@@ -313,7 +313,7 @@ function other_info()
 	var side_col = document.getElementById('text');
 	var text;
 	
-	if (WalCarm == undefined)
+	if (WalCarm == [])
 	{
 		text = 'Neither Waldo nor Carmen Sandeiago could be found.' + '<br/>';
 	}
