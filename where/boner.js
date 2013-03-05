@@ -185,7 +185,7 @@ function me_popup(marker)
 		var lat = WalCarm.loc.latitude;
 		var lng = WalCarm.loc.longitude;
 		info = info + WalCarm[0].name + "'s Distance: " +
-				distance(myLat,myLng,lat,lng) + <br/>;
+				distance(myLat,myLng,lat,lng) + '<br/>';
 	}
 	
 	google.maps.event.addListener(marker,'click',function()
