@@ -1,8 +1,3 @@
-function hold_var(a)
-{
-	curr = JSON.parse(a);
-}
-
 function parse_t()
 {
 	var request = new XMLHttpRequest();
@@ -34,6 +29,7 @@ function begin()
 	place_red();
 	getMyLocation();
 	parse_WalCarm();
+	other_info();
 }
 
 function place_red()
@@ -315,6 +311,12 @@ function distance(lat1,lon1,lat2,lon2)
 	var d = R * c;
 	
 	return d;
+}
+
+function other_info()
+{
+	var side_col = document.getElementById('text');
+	side_col.innerHTML = 'Hi';
 }
 
 function t_stops()
