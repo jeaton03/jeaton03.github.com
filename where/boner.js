@@ -336,10 +336,12 @@ function WalCarm_text()
 		if (i = 0)
 		{
 			text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+			console.log('text_inside if(i=0): ' + text);
 		}
 		else
 		{
 			text = text + WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+			console.log('text_inside if(i!=0): ' + text);
 		}
 		console.log('Text: ' + text);
 	}
