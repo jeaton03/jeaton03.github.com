@@ -311,15 +311,10 @@ function other_info()
 {
 	var side_col = document.getElementById('text');
 	
-	if (typeof WalCarm != 'undefined')
-	{
-		console.log('Gets inside If Satedment inside other_info()');
-		var text = WalCarm_text();
-		console.log('Text (Outside function): ' + text);
-		side_col.innerHTML = text;
-	}
-	else {console.log('DID NOT PASS THROUGH IF STATEMENT');}
-	console.log('Finished other_info function');
+	console.log('Gets inside If Satedment inside other_info()');
+	var text = WalCarm_text();
+	console.log('Text (Outside function): ' + text);
+	side_col.innerHTML = text;
 }
 
 function WalCarm_text()
@@ -332,7 +327,7 @@ function WalCarm_text()
 		var lng = WalCarm[i].loc.longitude;
 		console.log('Lat: ' + lat + '<br/>' + 'Long: ' + lng);
 		
-		text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!';
+		text = text + WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
 		console.log('Text: ' + text);
 	}
 	console.log('Text_Final: ' + text);
