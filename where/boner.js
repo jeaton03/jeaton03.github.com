@@ -161,13 +161,12 @@ function one_line(first,second)
 function place_me()
 {
 	var image = {url: 'me.png'}
-	var latlng = getMyLocation();
-	console.log('Lat_lng: ' + latlng);
+	getMyLocation();
 	
 	var marker = new google.maps.Marker(
 	{
 		map: map,
-		position: latlng,
+		position: myLatLng,
 		title: 'Me',
 		icon: 'me.png'
 	});
@@ -179,14 +178,9 @@ function getMyLocation()
 	{console.log('Gets inside if statement');	// the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position)
 		{
-			myLat = position.coords.latitude;
-			myLng = position.coords.longitude;
-			var arr = new Array();
-			arr[0] = myLat;
-			arr[1] = myLng;
-			console.log('Lat: ' + myLat);
-			console.log('arr: ' + arr);
-			return arr;
+			var myLat = position.coords.latitude;
+			var myLng = position.coords.longitude;
+			myLatLng = new google.maps.LatLng(myLat,myLng);
 		});
 	}
 	else
