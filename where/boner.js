@@ -169,6 +169,27 @@ function place_me()
 		title: 'Me',
 		icon: 'me.png'
 	});
+	
+	me_infowindow(marker);
+}
+
+function me_infowindow(marker)
+{
+	infowindow = new google.maps.InfoWindow();
+	var info = 'You are here!' + '<br/>';
+	info = info + 'Latitude: ' + myLat + '<br/>';
+	info = info + 'Longitude: ' + myLng + '<br/>';
+	
+	google.maps.event.addListener(marker,'click',function()
+	{
+		if (infowindow)
+		{
+			infowindow.close();
+		}
+		infowindow.setContent(info);
+		infowindow.open(map, marker);
+		map.setCenter(marker.position);
+	});
 }
 
 function getMyLocation()
@@ -244,11 +265,6 @@ function WalCarm_popup(marker,counter)
 	
 	var info = WalCarm[counter].loc.note;
 	info = info + '<br/>' + WalCarm_latlng(counter);
-	if (myLat)
-	{
-	info = info + '<br/>' + 'Distance away: ' +
-			distance(myLat,myLng,marker.lat,marker.lng);
-	}
 	
 	google.maps.event.addListener(marker,'click',function()
 	{
