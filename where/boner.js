@@ -180,14 +180,6 @@ function me_popup(marker)
 	info = info + 'Latitude: ' + myLat + '<br/>';
 	info = info + 'Longitude: ' + myLng;
 	
-	/*for (var i = 0; i < WalCarm.length; i++)
-	{
-		var lat = WalCarm.loc.latitude;
-		var lng = WalCarm.loc.longitude;
-		info = info + WalCarm[0].name + "'s Distance: " +
-				distance(myLat,myLng,lat,lng) + '<br/>';
-	}*/
-	
 	google.maps.event.addListener(marker,'click',function()
 	{
 		if (infowindow)
@@ -198,6 +190,7 @@ function me_popup(marker)
 		infowindow.open(map, marker);
 		map.setCenter(marker.position);
 	});
+	other_info();/////////--------------------------------------------------------------------------
 }
 
 function getMyLocation()
@@ -214,7 +207,7 @@ function getMyLocation()
 	}
 	else
 	{
-		alert("Geolocation is not supported by your web browser.  What a shame!");
+		alert("Geolocation is not supported by your web browser.");
 	}
 }
 
@@ -232,7 +225,6 @@ function parse_WalCarm()
 			WalCarm = JSON.parse(WalCarm);
 
 			pin_WalCarm();
-			other_info();
 		}
 	}
 }
