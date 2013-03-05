@@ -319,10 +319,11 @@ function other_info()
 	
 	if (typeof yourvar != 'undefined')
 	{
-		var text = WalCarm_text(); 
+		console.log('Gets inside If Satedment inside other_info()');
+		var text = WalCarm_text();
+		console.log('Text (Outside function): ' + text);
+		side_col.innerHTML = text;
 	}
-	
-	side_col.innerHTML = text;
 }
 
 function WalCarm_text()
