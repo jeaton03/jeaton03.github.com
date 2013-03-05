@@ -316,7 +316,7 @@ function distance(lat1,lon1,lat2,lon2)
 function other_info()
 {
 	var side_col = document.getElementById('text');
-	side_col.innerHTML = 'Hi';
+	side_col.content = 'Hi';
 }
 
 function t_stops()
