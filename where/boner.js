@@ -161,11 +161,12 @@ function one_line(first,second)
 function place_me()
 {
 	var image = {url: 'me.png'}
+	var latlng = getMyLocation();
 	
 	var marker = new google.maps.Marker(
 	{
 		map: map,
-		position: getMyLocation(),
+		position: latlng,
 		title: 'Me',
 		icon: 'me.png'
 	});
@@ -179,6 +180,7 @@ function getMyLocation()
 		{
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
+			console.log('Lat: ' + myLat);
 			return [myLat,myLng];
 		});
 	}
