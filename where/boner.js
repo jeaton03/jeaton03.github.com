@@ -315,14 +315,14 @@ function distance(lat1,lon1,lat2,lon2)
 
 function other_info()
 {
-	var side_col = document.getElementById('text').innerHTML;
+	var side_col = document.getElementById('text');
 	
 	if (typeof yourvar != 'undefined')
 	{
 		var text = WalCarm_text(); 
 	}
 	
-	side_col = text;
+	side_col.innerHTML = text;
 }
 
 function WalCarm_text()
