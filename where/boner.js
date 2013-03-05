@@ -160,11 +160,10 @@ function one_line(first,second)
 
 function place_me()
 {
-	getMyLocation();
 	var marker = new google.maps.Marker(
 	{
 		map: map,
-		position: [myLat,myLng],
+		position: getMyLocation(),
 		title: 'Me',
 		icon: url('me.png')
 	});
@@ -178,6 +177,7 @@ function getMyLocation()
 		{
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
+			return [myLat,myLng];
 		});
 	}
 	else
