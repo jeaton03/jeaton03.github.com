@@ -190,6 +190,7 @@ function me_popup(marker)
 		infowindow.open(map, marker);
 		map.setCenter(marker.position);
 	});
+	
 	other_info();/////////--------------------------------------------------------------------------
 }
 
@@ -333,16 +334,9 @@ function WalCarm_text()
 		var lat = WalCarm[i].loc.latitude;
 		var lng = WalCarm[i].loc.longitude;
 		console.log('Lat: ' + lat + '<br/>' + 'Long: ' + lng);
-		if (i = 0)
-		{
-			text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
-			console.log('text_inside if(i=0): ' + text);
-		}
-		else
-		{
-			text = text + WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
-			console.log('text_inside if(i!=0): ' + text);
-		}
+		text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+		console.log('text_inside if(i=0): ' + text);
+
 		console.log('Text: ' + text);
 	}
 	console.log('Text_Final: ' + text);
