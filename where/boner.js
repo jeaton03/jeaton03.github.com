@@ -321,6 +321,8 @@ function other_info()
 	{
 		var text = WalCarm_text();
 	}
+	
+	text = text + closest_t();
 
 	side_col.innerHTML = text;
 }
@@ -342,6 +344,26 @@ function WalCarm_text()
 	console.log('Text_Final: ' + text);
 	
 	return text;
+}
+
+function closest_t()
+{
+	var text = loc[0][4];
+	var dist = distance(myLat,myLng,loc[0][2],loc[0][3]);
+	var cur_dist = dist;
+	
+	for (var i = 0; i < loc.length; i++)
+	{
+		cur_dist = distance(myLat,myLng,loc[i][2],loc[i][3]);
+		if (cur_dist < dist)
+		{
+			dist = cur_dist;
+			text = loc[i][4];
+		}
+	}
+	
+	var total = '<br/>' + 'You are ' + dist + 'miles away from ' + text '.';
+	return total;
 }
 
 function t_stops()
