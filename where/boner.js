@@ -29,6 +29,7 @@ function begin()
 	place_red();
 	getMyLocation();
 	parse_WalCarm();
+	other_info();
 }
 
 function place_red()
@@ -191,7 +192,7 @@ function me_popup(marker)
 		map.setCenter(marker.position);
 	});
 	
-	other_info();/////////--------------------------------------------------------------------------
+	/////////--------------------------------------------------------------------------
 }
 
 function getMyLocation()
@@ -362,7 +363,7 @@ function closest_t()
 		}
 	}
 	
-	var total = '<br/>' + 'You are ' + round(dist) + 'miles away from ' + text + '.';
+	var total = '<br/>' + 'You are ' + round(dist) + ' miles away from ' + text + '.';
 	return total;
 }
 
