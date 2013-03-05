@@ -368,9 +368,9 @@ function closest_t()
 
 function round(num)
 {
-	num = num + 100;
+	num = num * 1000;
 	num = Math.floor(num);
-	num = num / 100;
+	num = num / 1000;
 	return num;
 }
 
