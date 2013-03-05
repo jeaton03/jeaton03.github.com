@@ -185,6 +185,7 @@ function getMyLocation()
 			arr[0] = myLat;
 			arr[1] = myLng;
 			console.log('Lat: ' + myLat);
+			console.log('arr: ' + arr);
 			return arr;
 		});
 	}
