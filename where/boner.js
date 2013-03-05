@@ -336,7 +336,7 @@ function WalCarm_text()
 		var lat = WalCarm[i].loc.latitude;
 		var lng = WalCarm[i].loc.longitude;
 		console.log('Lat: ' + lat + '<br/>' + 'Long: ' + lng);
-		text = text + WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+		text = text + WalCarm[i].name + ' is ' + round(distance(myLat,myLng,lat,lng)) + ' miles away!' + '<br/>';
 		console.log('text_inside if(i=0): ' + text);
 
 		console.log('Text: ' + text);
@@ -362,8 +362,16 @@ function closest_t()
 		}
 	}
 	
-	var total = '<br/>' + 'You are ' + dist + 'miles away from ' + text + '.';
+	var total = '<br/>' + 'You are ' + round(dist) + 'miles away from ' + text + '.';
 	return total;
+}
+
+function round(num)
+{
+	num = num + 100;
+	num = Math.floor(num);
+	num = num / 100;
+	return num;
 }
 
 function t_stops()
