@@ -317,7 +317,7 @@ function other_info()
 {
 	var side_col = document.getElementById('text');
 	
-	if (typeof yourvar != 'undefined')
+	if (typeof WalCarm != 'undefined')
 	{
 		console.log('Gets inside If Satedment inside other_info()');
 		var text = WalCarm_text();
