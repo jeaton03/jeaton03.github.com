@@ -13,8 +13,8 @@ body
 #map_canvas
 {
 	display: block;
-	height: 100%;
-	width: 75%;
+	height: 100px;
+	width: 100px;
 	margin: 0px;
 	padding: 0px;
 }
