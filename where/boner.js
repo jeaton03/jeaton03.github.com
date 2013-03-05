@@ -362,7 +362,7 @@ function closest_t()
 		}
 	}
 	
-	var total = '<br/>' + 'You are ' + dist + 'miles away from ' + text '.';
+	var total = '<br/>' + 'You are ' + dist + 'miles away from ' + text + '.';
 	return total;
 }
 
