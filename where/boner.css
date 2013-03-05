@@ -19,8 +19,8 @@ tr
 #map_canvas
 {
 	display: block;
-	height: 1000px;
-	width: 750px;
+	height: 750px;
+	width: 1000px;
 	margin: 0px;
 	padding: 0px;
 }
