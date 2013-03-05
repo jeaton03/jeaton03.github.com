@@ -27,7 +27,6 @@ function begin()
 	map = new google.maps.Map(document.getElementById('map_canvas'),options);
 	
 	place_red();
-	parse_WalCarm();
 	getMyLocation();
 }
 
@@ -175,6 +174,8 @@ function place_me()
 
 function me_popup(marker)
 {
+	parse_WalCarm();
+	
 	infowindow = new google.maps.InfoWindow();
 	var info = 'You are here!' + '<br/>';
 	info = info + 'Latitude: ' + myLat + '<br/>';
