@@ -181,8 +181,11 @@ function getMyLocation()
 		{
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
+			var arr = new Array();
+			arr[0] = myLat;
+			arr[1] = myLng;
 			console.log('Lat: ' + myLat);
-			return [myLat,myLng];
+			return arr;
 		});
 	}
 	else
