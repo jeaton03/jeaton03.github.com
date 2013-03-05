@@ -10,7 +10,7 @@ function parse_t()
 		{
 			data = request.responseText;
 			data = JSON.parse(data);
-			begin();
+			begin();console
 		}
 	}
 }
@@ -155,7 +155,6 @@ function one_line(first,second)
 		strokeColor: '#FF0000',
 		strokeWeight: 5
 	});
-	
 }
 
 function place_me()
@@ -171,7 +170,7 @@ function place_me()
 	});
 	
 	me_popup(marker);
-	other_info();// - - - - -- - - - - 
+	other_info();
 }
 
 function me_popup(marker)
@@ -191,8 +190,6 @@ function me_popup(marker)
 		infowindow.open(map, marker);
 		map.setCenter(marker.position);
 	});
-	
-	/////////--------------------------------------------------------------------------
 }
 
 function getMyLocation()
@@ -336,11 +333,8 @@ function WalCarm_text()
 	{
 		var lat = WalCarm[i].loc.latitude;
 		var lng = WalCarm[i].loc.longitude;
-		console.log('Lat: ' + lat + '<br/>' + 'Long: ' + lng);
+		
 		text = text + WalCarm[i].name + ' is ' + round(distance(myLat,myLng,lat,lng)) + ' miles away!' + '<br/>';
-		console.log('text_inside if(i=0): ' + text);
-
-		console.log('Text: ' + text);
 	}
 	console.log('Text_Final: ' + text);
 	
