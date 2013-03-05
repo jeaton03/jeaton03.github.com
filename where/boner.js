@@ -316,7 +316,28 @@ function distance(lat1,lon1,lat2,lon2)
 function other_info()
 {
 	var side_col = document.getElementById('text').innerHTML;
-	side_col = 'Hi';
+	
+	if (typeof yourvar != 'undefined')
+	{
+		var text = WalCarm_text(); 
+	}
+	
+	side_col = text;
+}
+
+function WalCarm_text()
+{
+	var text;
+	
+	for (var i = 0; i < WalCarm.length; i++)
+	{
+		var lat = WalCarm[i].loc.latitude;
+		var lng = WalCarm[i].loc.longitude;
+		
+		text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!';
+	}
+	
+	return text;
 }
 
 function t_stops()
