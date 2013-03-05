@@ -160,12 +160,14 @@ function one_line(first,second)
 
 function place_me()
 {
+	var image = {url: 'me.png'}
+	
 	var marker = new google.maps.Marker(
 	{
 		map: map,
 		position: getMyLocation(),
 		title: 'Me',
-		icon: url('me.png')
+		icon: 'me.png'
 	});
 }
 
