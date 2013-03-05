@@ -177,8 +177,8 @@ function getMyLocation()
 	{console.log('Gets inside if statement');	// the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position)
 		{
-			var myLat = position.coords.latitude;
-			var myLng = position.coords.longitude;
+			myLat = position.coords.latitude;
+			myLng = position.coords.longitude;
 			myLatLng = new google.maps.LatLng(myLat,myLng);
 			place_me();
 		});
@@ -230,6 +230,8 @@ function pin_WalCarm()
 			position: latlng,
 			title: WalCarm[i].name,
 			icon: image,
+			lat: lat,
+			lng: lng
 		});
 		
 		WalCarm_popup(marker,i);
@@ -242,6 +244,8 @@ function WalCarm_popup(marker,counter)
 	
 	var info = WalCarm[counter].loc.note;
 	info = info + '<br/>' + WalCarm_latlng(counter);
+	info = info + '<br/>' + 'Distance away: ' +
+			distance(myLat,myLng,marker.lat,marker.lng);
 	
 	google.maps.event.addListener(marker,'click',function()
 	{
