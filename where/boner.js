@@ -292,7 +292,8 @@ function distance(lat1,lon1,lat2,lon2)
 	// Copied from < http://www.movable-type.co.uk/scripts/latlong.html >
 
 	var R = 3958.756; // miles
-	var dLat = (lat2-lat1).toRad();
+	var dLat = Math.toRad(lat2-lat1);
+	console.log('dLat: ' + dLat);
 	var dLon = (lon2-lon1).toRad();
 	var lat1 = lat1.toRad();
 	var lat2 = lat2.toRad();
