@@ -204,7 +204,7 @@ function me_popup(marker)
 function getMyLocation()
 {
 	if (navigator.geolocation)
-	{console.log('Gets inside if statement');	// the navigator.geolocation object is supported on your browser
+	{
 		navigator.geolocation.getCurrentPosition(function(position)
 		{
 			myLat = position.coords.latitude;
@@ -324,6 +324,8 @@ function other_info()
 		console.log('Text (Outside function): ' + text);
 		side_col.innerHTML = text;
 	}
+	else {console.log('DID NOT PASS THROUGH IF STATEMENT');}
+	console.log('Finished other_info function');
 }
 
 function WalCarm_text()
