@@ -170,10 +170,10 @@ function place_me()
 		icon: 'me.png'
 	});
 	
-	me_infowindow(marker);
+	me_popup(marker);
 }
 
-function me_infowindow(marker)
+function me_popup(marker)
 {
 	infowindow = new google.maps.InfoWindow();
 	var info = 'You are here!' + '<br/>';
