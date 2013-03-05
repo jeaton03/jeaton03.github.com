@@ -244,8 +244,11 @@ function WalCarm_popup(marker,counter)
 	
 	var info = WalCarm[counter].loc.note;
 	info = info + '<br/>' + WalCarm_latlng(counter);
+	if (myLat)
+	{
 	info = info + '<br/>' + 'Distance away: ' +
 			distance(myLat,myLng,marker.lat,marker.lng);
+	}
 	
 	google.maps.event.addListener(marker,'click',function()
 	{
