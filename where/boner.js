@@ -162,6 +162,7 @@ function place_me()
 {
 	var image = {url: 'me.png'}
 	var latlng = getMyLocation();
+	console.log('Lat_lng: ' + latlng);
 	
 	var marker = new google.maps.Marker(
 	{
