@@ -326,7 +326,7 @@ function other_info()
 
 function WalCarm_text()
 {
-	var text;
+	var text = '';
 	
 	for (var i = 0; i < WalCarm.length; i++)
 	{
