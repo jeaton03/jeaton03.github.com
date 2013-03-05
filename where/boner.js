@@ -311,15 +311,15 @@ function other_info()
 {
 	var side_col = document.getElementById('text');
 	
-	//if (typeof WalCarm != 'undefined')
-	//{
+	if (typeof WalCarm != 'undefined')
+	{
 		console.log('Gets inside If Satedment inside other_info()');
 		var text = WalCarm_text();
 		console.log('Text (Outside function): ' + text);
 		side_col.innerHTML = text;
-	//}
-	//else {console.log('DID NOT PASS THROUGH IF STATEMENT');}
-	//console.log('Finished other_info function');
+	}
+	else {console.log('DID NOT PASS THROUGH IF STATEMENT');}
+	console.log('Finished other_info function');
 }
 
 function WalCarm_text()
