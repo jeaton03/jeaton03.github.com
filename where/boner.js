@@ -28,7 +28,6 @@ function begin()
 	
 	place_red();
 	getMyLocation();
-	place_me();
 	parse_WalCarm();
 }
 
@@ -181,6 +180,7 @@ function getMyLocation()
 			var myLat = position.coords.latitude;
 			var myLng = position.coords.longitude;
 			myLatLng = new google.maps.LatLng(myLat,myLng);
+			place_me();
 		});
 	}
 	else
