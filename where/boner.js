@@ -1,3 +1,8 @@
+function hold_var(a)
+{
+	curr = JSON.parse(a);
+}
+
 function parse_t()
 {
 	var request = new XMLHttpRequest();
@@ -28,6 +33,7 @@ function begin()
 	
 	place_red();
 	getMyLocation();
+	parse_WalCarm();
 }
 
 function place_red()
@@ -174,20 +180,18 @@ function place_me()
 
 function me_popup(marker)
 {
-	parse_WalCarm();
-	
 	infowindow = new google.maps.InfoWindow();
 	var info = 'You are here!' + '<br/>';
 	info = info + 'Latitude: ' + myLat + '<br/>';
 	info = info + 'Longitude: ' + myLng;
 	
-	for (var i = 0; i < WalCarm.length; i++)
+	/*for (var i = 0; i < WalCarm.length; i++)
 	{
 		var lat = WalCarm.loc.latitude;
 		var lng = WalCarm.loc.longitude;
 		info = info + WalCarm[0].name + "'s Distance: " +
 				distance(myLat,myLng,lat,lng) + '<br/>';
-	}
+	}*/
 	
 	google.maps.event.addListener(marker,'click',function()
 	{
