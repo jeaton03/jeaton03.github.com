@@ -333,9 +333,12 @@ function WalCarm_text()
 	{
 		var lat = WalCarm[i].loc.latitude;
 		var lng = WalCarm[i].loc.longitude;
+		console.log('Lat: ' + lat + '<br/>' + 'Long: ' + lng);
 		
 		text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!';
+		console.log('Text: ' + text);
 	}
+	console.log('Text_Final: ' + text);
 	
 	return text;
 }
