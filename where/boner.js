@@ -161,13 +161,13 @@ function one_line(first,second)
 function place_me()
 {
 	getMyLocation();
-	/*var marker = new google.maps.Marker(
+	var marker = new google.maps.Marker(
 	{
 		map: map,
-		position: coords,
+		position: [myLat,myLng],
 		title: 'Me',
-		icon: 'me.png'
-	});*/
+		icon: url('me.png')
+	});
 }
 
 function getMyLocation()
@@ -178,16 +178,12 @@ function getMyLocation()
 		{
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
-			console.log('Lat: ' + myLat);
-			renderMap();
 		});
 	}
 	else
 	{
 		alert("Geolocation is not supported by your web browser.  What a shame!");
-		console.log('gets inside else statement');
 	}
-	console.log('sdfdsf');
 }
 
 function parse_WalCarm()
