@@ -27,6 +27,7 @@ function begin()
 	map = new google.maps.Map(document.getElementById('map_canvas'),options);
 	
 	place_red();
+	getMyLocation();
 	place_me();
 	parse_WalCarm();
 }
@@ -161,7 +162,6 @@ function one_line(first,second)
 function place_me()
 {
 	var image = {url: 'me.png'}
-	getMyLocation();
 	
 	var marker = new google.maps.Marker(
 	{
