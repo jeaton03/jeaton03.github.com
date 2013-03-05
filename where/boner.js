@@ -310,10 +310,17 @@ function distance(lat1,lon1,lat2,lon2)
 function other_info()
 {
 	var side_col = document.getElementById('text');
+	var text;
 	
-	console.log('Gets inside If Satedment inside other_info()');
-	var text = WalCarm_text();
-	console.log('Text (Outside function): ' + text);
+	if (WalCarm == undefined)
+	{
+		text = 'Neither Waldo nor Carmen Sandeiago could be found.' + '<br/>';
+	}
+	else
+	{
+		var text = WalCarm_text();
+	}
+
 	side_col.innerHTML = text;
 }
 
@@ -326,8 +333,14 @@ function WalCarm_text()
 		var lat = WalCarm[i].loc.latitude;
 		var lng = WalCarm[i].loc.longitude;
 		console.log('Lat: ' + lat + '<br/>' + 'Long: ' + lng);
-		
-		text = text + WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+		if (i = 0)
+		{
+			text = WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+		}
+		else
+		{
+			text = text + WalCarm[i].name + ' is ' + distance(myLat,myLng,lat,lng) + ' miles away!' + '<br/>';
+		}
 		console.log('Text: ' + text);
 	}
 	console.log('Text_Final: ' + text);
