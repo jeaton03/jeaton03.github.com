@@ -29,6 +29,7 @@ tr
 {
 	height: 100%;
 	width: 100%;
+	vertical-align: top;
 	font-family: helvetica;
 	font-size: 20px;
 	margin: 40px;
