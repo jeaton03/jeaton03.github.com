@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Fecesbook</title>
+	<script>
+		function add_old_messages()
+		{
+			if (localStorage.storage != null)
+			{
+				var cur_mes = localStorage.storage.split('|');
+			
+				for (var i = cur_mes.length - 2; i >= 0; i--)
+				{
+					add_message(cur_mes[i]);
+				}
+			}
+		}
+		
+		function get_message()
+		{		
+			var message = document.getElementById('msg').value;
+			message = getDate() + message;
+			
+			if (message !== "")
+			{
+				add_message(message);
+				set_storage(message);
+			}
+		}
+		
+		function getDate()
+		{
+			var date = new Date();
+			date = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear() +
+			" " + date.getHours() + ":" + date.getMinutes() + " - ";
+			
+			return date;
+		}
+		
+		function add_message(message)
+		{
+			var newListElement = document.createElement("li");
+			
+			newListElement.textContent = message;
+			List = document.getElementById("status");
+			List.insertBefore(newListElement, List.firstChild);
+
+			document.getElementById("msg").value = "";
+		}
+		
+		function set_storage(mes)
+		{
+			var old_mes = localStorage.storage;
+			mes = mes + '|' + old_mes;
+			localStorage.setItem('storage', mes);
+		}
+	</script>
+</head>
+
+<body onload = 'add_old_messages()'>
+	<h1>Fecebook</h1>
+	<div id="nav">
+		<ul>
+			<li id="home">Home</li>
+			<li id="groups">Groups</li>
+			<li id="profile">Profile</li>
+			<li id="contacts">Contacts</li>
+			<li id="inbox">Inbox</li>
+			<li id="applications">Applications</li>
+		</ul>
+	</div>
+	<h2 id="fullname">Barney Gumble</h2>
+	<p><img src="https://s3.amazonaws.com/tufts-cs-mchow-images/barneymug.gif" alt="profile" /></p>
+	<h3>What are you thinking about? <input type="text" id="msg" name="msg" size="30" />
+	<button type = "button" onclick = "get_message()">Submit</button></h3>
+	<h3>Updates</h3>
+	<ul id="status">
+	</ul>
+	<div id="yesterday">
+		<h3>Updates from yesterday:</h3>
+		<ul>
+			<li>Alice is now connected to Bob</li>
+			<li>Tom recommends Jerry</li>
+			<li>Harry just returned from a trip from Curaco</li>
+		</ul>
+	</div>
+	<div id="longlongtimeago">
+		<h3>Updates from long long time ago:</h3>
+		<ul>
+			<li>Harry just returned from a trip from Curaco</li>
+			<li>Joan is now connected to Mary</li>
+			<li>Steven is now connected to James</li>
+		</ul>
+	</div>
+</body>
+</html>
