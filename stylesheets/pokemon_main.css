@@ -85,3 +85,45 @@ body
 	background-color: red;
 	color: black;
 }
+
+.grass
+{
+	background-color: green;
+	color: white;
+}
+
+.water
+{
+	background-color: blue;
+	color: black;
+}
+
+.ice
+{
+	background-color: rgb(40,244,255);
+	color: black;
+}
+
+.ground
+{
+	background-color: rgb(160,97,10);
+	color: white;
+}
+
+.dark
+{
+	background-color: black;
+	color: white;
+}
+
+.rock
+{
+	background-color: rgb(183,163,21);
+	color: black;
+}
+
+.dragon
+{
+	background-color: rgb(142,2,236);
+	color: white;
+}
