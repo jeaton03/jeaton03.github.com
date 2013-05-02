@@ -1,0 +1,87 @@
+body
+{
+	text-align: center;
+	text-decoration: none;
+}
+
+#pokemon_back
+{
+	width: 25%;
+}
+
+#person_table
+{
+	position: relative;
+	width: 100%;
+}
+
+.person_box
+{
+	width: 50%;
+	padding: 20px;
+	font-family: helvetica;
+	color: black;
+}
+
+.pokemon_box
+{
+	padding: 30px;
+}
+
+.people_pics
+{
+	position: relative;
+	width: 100%;
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+}
+
+.pokemon_pics
+{
+	border: none;
+}
+
+.people_text
+{
+	font-size: 40px;
+}
+
+.move
+{
+	font-size: 20px;
+	border-style: solid;
+	border-width: 2px;
+	padding: 2px;
+	border-color: black;
+}
+
+.ghost
+{
+	background-color: purple;
+	color: white;
+}
+
+.fighting
+{
+	background-color: orange;
+	color: black;
+}
+
+.electric
+{
+	background-color: yellow;
+	color: black;
+}
+
+.psychic
+{
+	background-color: pink;
+	color: black;
+}
+
+.fire
+{
+	background-color: red;
+	color: black;
+}

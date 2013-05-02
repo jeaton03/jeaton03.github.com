@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Pokemon</title>
+	<link rel = "stylesheet" href = "stylesheets/mobile.css" media = "only screen and (max-device-width:1000px)" />
+	<link rel = "stylesheet" href = "stylesheets/stylesheet.css" media = "print, screen and (min-device-width:1001px)" />
+	<link rel = "stylesheet" href = "stylesheets/pokemon_main.css" />
+</head>
+
+<body>
+	<div class = "middlebox">
+		<a onClick = "history.go(-1); return true;">
+			<img alt = "Back Button" src = "images/button_back.png"
+				class = "redbutton"
+				id = "pokemon_back"
+				onMouseOver = "this.src = 'images/button_back_highlight.png'"
+				onMouseOut  = "this.src = 'images/button_back.png'" />
+		</a>
+		<h1>J-Bird's Pokemon Page</h1><br/>
+		<table>
+			<tr>
+				<!-- POKEMON -->
+				<td class = 'person_box pokemon_box'>
+					<div class = 'people_text'>
+						Gengar
+					</div><br/>
+					<img src = 'images/pokemon/gengar.png' class = 'people_pics pokemon_pics'/>
+					<table>
+						<tr>
+							<td class = 'move ghost'>Shadow Ball</td>
+							<td class = 'move fighting'>Focus Blast</td>
+						</tr>
+						<tr>
+							<td class = 'move electric'>Thunder Bolt</td>
+							<td class = 'move psychic'>Hypnosis</td>
+						</tr>
+					</table>
+				</td>
+				<!-- POKEMON -->
+				<td class = 'person_box pokemon_box'>
+					<div class = 'people_text'>
+						Magmortar
+					</div><br/>
+					<img src = 'images/pokemon/magmortar.png' class = 'people_pics pokemon_pics'/>
+					<table>
+						<tr>
+							<td class = 'move fire'>Fire Blast</td>
+							<td class = 'move electric'>Thunder Bolt</td>
+						</tr>
+						<tr>
+							<td class = 'move psychic'>Psychic</td>
+							<td class = 'move fire'>Sunny Day</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

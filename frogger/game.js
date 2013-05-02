@@ -753,4 +753,14 @@ function end_game()
 	pic.fillText("GAME OVER",70,400);
 	pic.font = "20px Helvetica";
 	pic.fillText("Refresh to Restart",120,425);
+	
+	post_score();
+}
+
+function post_score()
+{
+	var xml = new XMLHttpRequest;
+	var name = window.prompt('Please enter your name.', 'Name goes here');
+	//xml.open('POST', '',true);
+	//xml.send();
 }
