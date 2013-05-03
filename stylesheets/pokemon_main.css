@@ -47,6 +47,11 @@ body
 	font-size: 40px;
 }
 
+.poke_name
+{
+	font-size: 25px;
+}
+
 .move
 {
 	font-size: 20px;
@@ -126,4 +131,28 @@ body
 {
 	background-color: rgb(142,2,236);
 	color: white;
+}
+
+.bug
+{
+	background-color: rgb(122,172,17);
+	color: white;
+}
+
+.poison
+{
+	background-color: rgb(156,19,185);
+	color: white;
+}
+
+.normal
+{
+	background-color: white;
+	color: black;
+}
+
+.flying
+{
+	background-color: rgb(175,226,254);
+	color: black;
 }
