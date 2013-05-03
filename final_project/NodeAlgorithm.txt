@@ -1,0 +1,41 @@
+// File: NodeAlgorithm.txt
+// Description: This is an explaination on how to group
+//   commuters so that they will only be chatting with
+//   people who are close to them.
+
+Notes:
+	Node - Group of commuters in the same chat room
+
+- - - - - - - - - - - - - - - - - - - - -
+		Add Member
+- - - - - - - - - - - - - - - - - - - - -
+1.)	If there are no nodes, the member gets his/her
+	  own node.
+2.)	Else, find the closest node and distance to that
+	  node.
+3.)	If potential new member is within the radius of
+	  the node (+0.25 mi) then add them to that node
+4.) Check if the node needs to be broken up
+
+- - - - - - - - - - - - - - - - - - - - -
+		See What Has Changed
+- - - - - - - - - - - - - - - - - - - - -
+1.)	Check each node
+2.)	Find all cars outside the radius (+0.10 mi) and
+	  see if they can be grouped with another node or
+	  if they can be grouped together.
+3.) If they are grouped with eachother, keep conversation
+4.) If they are grouped with another node, prompt the user
+	  to either switch or stay in the same group.
+5.)	If they stay in the same node, mark them as a distant
+	  member.
+6.) Readjust center and radius of node.
+
+- - - - - - - - - - - - - - - - - - - - -
+		Breakup a Node
+- - - - - - - - - - - - - - - - - - - - -
+1.)	Check if radius is more than 1.25 mi
+2.)	Make a list of all members outside of the 1.25 mi radius
+3.)	See if they can be grouped in another node
+4.) See if they can be grouped with other exciled members
+5.)	Readjust center and radius of node.

@@ -1,0 +1,25 @@
+body
+{
+	background-color: #FF0000;
+}
+
+.slide_wrap
+{
+	color: red;
+	display: block;
+	width: 500px;
+	height: 500px;
+	background-color: #00FF00;
+	margin-left: 35%;
+}
+
+.img_slide
+{
+	width: 100%;
+}
+
+.thirdpage
+{
+	width: 100px;
+	height: 100px;
+}

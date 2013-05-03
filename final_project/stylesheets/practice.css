@@ -1,0 +1,53 @@
+body {
+	height:100%;
+	width:100%;
+	margin:0;padding:0;
+}
+
+#wrapper {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;left:0;
+	background-color:#ccc;
+	overflow:hidden;
+}
+
+#mask {
+	width:500%;
+	height:100%;
+
+	background-color:#eee;
+}
+
+	.item {
+		width:20%;
+		height:100%;
+		float:left;
+		background-color:#ddd;
+	}
+	
+	.selected {
+		background:#fff;
+		font-weight:700;
+	}
+
+	.clear {
+		clear:both;
+	}
+
+table
+{
+	height: 100%;
+}
+
+#map
+{
+	width: 95%;
+}
+
+#slider_pic
+{
+	width: 100%;
+	height: 100%;
+}

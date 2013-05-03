@@ -1,0 +1,54 @@
+SERVER INTERACTION NOTES
+--------------------------------------------------------------
+
+When a user allows our site to aquire his location, a POST AJAX
+request is sent to /new_user/ with the field latlng.
+
+The server will respond back with an id for that user. The id will
+not be sent back as a JSON object, but rather plaintext.
+
+--------------------------------------------------------------
+
+If you send a GET ajax request to /messages/
+
+IMPORTANT: If you query /messages/, you must include the field
+ userid and you also may include
+a last_id field which represents the most recent message id
+that has been received. If no last_id field is provided in
+the request, the server will assume that you want ALL the
+messages since you submitted the user's name.
+
+You should expect back an ARRAY of JSON objects with the following fields:
+
+Field Name | Representation
+---------------------------
+sender ... | The name of the sender as determined by the user
+message .. | The content of the actual message that was sent
+when ..... | The timestamp of the message when it was RECEIVED by the server
+
+Do NOT parse the string received back from this query. It is an ARRAY of JSON objects, not a single object.
+
+--------------------------------------------------------------
+
+If you are SENDING a message to the server, send a POST ajax request to /send_message/
+
+The format of the JSON object must have the following fields:
+
+Field Name | Representation
+---------------------------
+sender_id. | The ID of the sender as determined by the server
+message .. | The content of the actual message that was sent
+location . | The LatLng of the sender at the time of the message being sent (or the
+.............. last known location of the sender.
+
+The server will respond back with a JSON object with three fields:
+
+Field Name .. | Representation
+-------------------------------
+group_id .... | The id number of the group
+center_latlng | Center of the circle of the users current group
+radius ...... | Radius of said circle
+
+--------------------------------------------------------------
+
+This should be sufficient to allow you guys to create the front-end portion of this site.
