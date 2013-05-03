@@ -4,6 +4,15 @@ html,body{
 	margin:0;
 }
 
+div#desktop
+{
+	display: none;
+}
+
+div#mobile
+{
+	display: visible;
+}
 body{
 	background-color: #006a89;
 }

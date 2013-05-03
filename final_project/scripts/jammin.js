@@ -10,33 +10,28 @@ function init(){
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	map = new google.maps.Map($('#map')[0],options);
+	map = new google.maps.Map($('#map')[0], options);
 	
-	if(getMyLocation()){
-		drawMe();
-		getId(myLat, myLng);
+	if (navigator.geolocation) {
+		getMyLocation();
 	}
-	else{
+	else {
 		localStorage.setItem('myId',-1)
+		receiver();
 	}
 		
 }
 
 function getMyLocation(){
-	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition(function(position){
-			myLat = position.coords.latitude;
-			myLng = position.coords.longitude;
-			return true;
-		});
-	}
-	else {
-		//If this is the case, then the user will NOT be allowed
-		//to send messages.
-		alert("Geolocation is not supported by your web browser.");
-		return false;
-	}
+	navigator.geolocation.getCurrentPosition(function(position){
+		myLat = position.coords.latitude;
+		myLng = position.coords.longitude;
+		drawMe();
+		getId(myLat, myLng);
+		receiver();
+	});
 }
+
 function drawMe(){
 	meMarker = new google.maps.Marker({
 		position: new google.maps.LatLng(myLat,myLng),
@@ -97,7 +92,7 @@ function send(formdata){
 		radius ...... | Radius of said circle
 		*/
 		
-		$.post("/send_message/", toSend, function(status){
+		$.post("/send_message/", toSend, function(response){
 			/*element creation*/
 			var speechbox = $('<p></p>');
 			var namespan = $("<p></p>").text('Me: ');
@@ -111,10 +106,29 @@ function send(formdata){
 			/*appending new message*/
 			speechbox.append(namespan, messpan);
 			$('#mboard').append(speechbox);
-			var chatdiv = $('#chat');
+			var chatdiv = $('#mboard');
 			chatdiv.animate({ scrollTop: chatdiv.prop("scrollHeight") - chatdiv.height() }, 0);
+
+			checkGroup(response);
+
 			
 		});
 	}
 }
 
+function checkGroup(response){
+	respobject = JSON.parse(response);
+	
+
+}
+
+function drawGroup(ctr, rad){
+	group = new google.maps.Circle({
+		center: ctr,
+		radius: rad,
+		fillOpacity: 0,
+		strokeColor: "#00F",
+		strokeWeight: 5,
+		map: map
+	});
+}

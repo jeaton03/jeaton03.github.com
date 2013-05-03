@@ -24,59 +24,15 @@
 	<script src = 'scripts/jquery.scrollTo.js'></script>
 	<script type = "text/javascript" src = "scripts/jammin.js"></script>
 	<script>$(document).ready(init);</script>
-	
-	<style>
-		<!--.site_wrap > .slides_wrap {
-			margin-bottom: 1em;
-			margin-left: -8px;
-			margin-right: -8px;
+	<script>
+		function bar()
+		{
+			var tab = $('slider_tab');
+			var image = new Image;
+			image.src = 'images/traffic_jammin_sprites.png';
+			tab.drawImage(image,904,206,37,169);
 		}
-
-		.img_slides_wrap {
-			width: 784px;
-			border: 8px solid #333333;
-			background-color: #444444;
-			overflow: hidden;
-		}
-
-		.img_slide {
-			padding: 0;
-		}
-
-		.js .img_slide {
-			/* Overide template's height transitions. */
-			width: 100%;
-			height: auto;
-		}
-
-		.slide_buttons_index {
-			text-align: center;
-		}
-
-		.notransition,
-		.notransition .slide {
-			-webkit-transition-duration: 0 !important;
-			   -moz-transition-duration: 0 !important;
-			    -ms-transition-duration: 0 !important;
-			        transition-duration: 0 !important;
-		
-			-webkit-transition-delay: 0 !important;
-			   -moz-transition-delay: 0 !important;
-			    -ms-transition-delay: 0 !important;
-			        transition-delay: 0 !important;
-		}
-
-		@media screen and (max-width: 640px) {
-			.img_slides_wrap {
-				width: 100%;
-
-				-webkit-box-sizing: content-box;
-				   -moz-box-sizing: content-box;
-				    -ms-box-sizing: content-box;
-				        box-sizing: content-box;
-			}
-		}-->
-	</style>
+	</script>
 </head>
 
 <body>
@@ -84,12 +40,14 @@
 		<div id = 'frame'>
 			<div class="img_slides_wrap slides_wrap wrap">
 				<div class = 'img_slides_wrap' id = 'map'></div>
-				<img id = 'slider_tab' src = 'images/crappy_slider.png' class = 'img_slide slide active' />
+				<img onLoad = 'bar()' id = 'slider_tab' src = 'images/crappy_slider.png' class = 'img_slide slide active' />
 				<div class = 'img_slide slide' id = "chat">
 					<div id = "mboard"></div>
 						<form  name = "input">
-							<textarea id="message" rows='4' maxlength='160'></textarea>
-							<input type ="button" value = "Submit" id = "submit" onClick = "bubble()">
+							<textarea id="message" rows='2' maxlength='160'></textarea>
+							<button type ="button" id = "submit" onClick = "send(this.form)">
+								<img class = "arrow" src = "images/submit_arrow.png">
+							</button>
 						</form>
 					</div>
 				</div>
