@@ -4,6 +4,11 @@ body
 	text-decoration: none;
 }
 
+tr
+{
+	width: 100%;
+}
+
 #pokemon_back
 {
 	width: 25%;
@@ -50,6 +55,12 @@ body
 .poke_name
 {
 	font-size: 25px;
+}
+
+.moves_table
+{
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .move
