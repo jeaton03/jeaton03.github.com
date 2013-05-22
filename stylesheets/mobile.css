@@ -5,6 +5,14 @@ html, body
 	margin: 0;
 }
 
+#pokeball
+{
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width: 15%;
+}
+
 body
 {
 	background-image: url(../images/chicken.jpg);
