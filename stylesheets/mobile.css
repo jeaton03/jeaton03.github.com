@@ -11,6 +11,7 @@ html, body
 	bottom: 10px;
 	left: 10px;
 	width: 15%;
+	z-index: 1;
 }
 
 body
