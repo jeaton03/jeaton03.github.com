@@ -7,9 +7,14 @@
 	<link rel = "stylesheet" href = "../stylesheets/mobile.css" media = "only screen and (max-device-width:1000px)" />
 	<link rel = "stylesheet" href = "../stylesheets/stylesheet.css" media = "print, screen and (min-device-width:1001px)" />
 	<link rel = "stylesheet" href = "../stylesheets/pokemon_main.css" />
+	<script src = '../javascripts/pokemon_main.js'></script>
 </head>
 
 <body>
+	<a href = '/pages/pokemon_main.html'>
+		<img src = '../images/pokemon/pokeball.png' id = 'pokeball'
+			onMouseOver = 'init()' onMouseOut = 'stop_rotate()'/>
+	</a>
 	<div class = "middlebox">
 		<a onClick = "history.go(-1); return true;">
 			<img alt = "Back Button" src = "../images/button_back.png"
@@ -21,7 +26,7 @@
 		<h1>Pokemon Home Page</h1><br/>
 		<table id = 'person_table'>
 			<tr>
-				<td class = 'person_box'>
+				<td class = 'person_box' id = 'jesse'>
 					<a href = 'pokemon_jesse.html'>
 						<img src = '../images/jesse_chair.jpg' class = 'people_pics'/><br/>
 						<div class = 'people_text'>
