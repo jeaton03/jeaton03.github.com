@@ -52,6 +52,12 @@ tr
 	font-size: 40px;
 }
 
+.person_link
+{
+	text-decoration: none;
+	color: black;
+}
+
 .poke_name
 {
 	font-size: 25px;
