@@ -15,6 +15,9 @@ html, body
 	padding-right: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	color: white;
+	font-family: helvetica;
+	font-size: 14px;
 	z-index: 100;
 }
 
@@ -29,6 +32,40 @@ html, body
 	float: left;
 	z-index: 1;
 	height: 70px;
+	margin-left: 3px;
+	margin-top: -15px;
+}
+
+#nav_bar_list
+{
+	list-style-type: none;
+}
+
+.nav_bar_link
+{
+	color: white;
+	float: left;
+	font-size: 45px;
+	text-decoration: none;
+	border-color: rgb(0, 0, 255);
+	border-left-style: solid;
+	border-left-width: 5px;
+	padding-left: 30px;
+	vertical-align: middle;
+	margin-left: 20px;
+	margin-top: -5px;
+}
+
+.nav_bar_link:hover
+{
+	color: red;
+}
+
+#last_element
+{
+	border-right-style: solid;
+	border-right-width: 5px;
+	padding-right: 30px;
 }
 
 body
