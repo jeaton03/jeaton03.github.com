@@ -3,7 +3,7 @@ BACKANGLE = -1 * ANGLE;
 temp_angle = 0;
 delay = 30;	// milliseconds
 
-function init()
+/*function init()
 {
 	rotating_foward = setInterval(rotate_foward, delay);
 	clearInterval(rotating_backward);
@@ -35,4 +35,15 @@ function rotate_backward()
 		pokeball.style['-webkit-transform'] = 'rotate(' + temp_angle + 'deg)';
 		clearInterval(rotating_backward);
 	}
+}*/
+
+function  start()
+{
+	setInterval(spin, delay);
+}
+
+function spin()
+{
+	temp_angle += ANGLE;
+	pokeball.style['-webkit-transform'] = 'rotate(' + temp_angle + 'deg)';
 }
