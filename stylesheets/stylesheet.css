@@ -68,6 +68,30 @@ html, body
 	padding-right: 30px;
 }
 
+#search_div
+{
+	float: right;
+	margin-right: 2%;
+	margin-top: 0.25%;
+}
+
+#search_form:hover
+{
+	
+}
+
+.search_text
+{
+	font-family: helvetica;
+	font-size: 20px;
+}
+
+#search_label
+{
+	color: blue;
+	opacity: 1;
+}
+
 body
 {
 	background-image: url(../images/chicken.jpg);

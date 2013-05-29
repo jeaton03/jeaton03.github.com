@@ -1,3 +1,7 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+//				Pokeball Spinning Functions
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 ANGLE = 3;
 BACKANGLE = -1 * ANGLE;
 temp_angle = 0;
@@ -46,4 +50,18 @@ function spin()
 {
 	temp_angle += ANGLE;
 	pokeball.style['-webkit-transform'] = 'rotate(' + temp_angle + 'deg)';
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+//					Search Functions
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+function bulba_search()
+{
+	var box = document.getElementById('search_input');
+	var text = box.value;
+	if (text != '')
+	{
+		window.location.href = 'http://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search=' + text;
+	}
 }
