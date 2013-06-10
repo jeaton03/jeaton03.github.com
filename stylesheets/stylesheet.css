@@ -9,7 +9,7 @@ html, body
 {
 	position: fixed;
 	height: 70px;
-	background-color: black;
+	background: -webkit-linear-gradient(top, #444444, black);
 	width: 100%;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -19,6 +19,7 @@ html, body
 	font-family: helvetica;
 	font-size: 14px;
 	z-index: 100;
+	box-shadow: 0px 5px 15px #444444;
 }
 
 #inner_header
